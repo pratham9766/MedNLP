@@ -1,0 +1,5 @@
+[
+ {"id":"lab-001","document_type":"laboratory","text":"LABORATORY RESULTS\nHemoglobin 13.4 g/dL (12.0-16.0)\nGlucose 106 mg/dL (70-99)","expected_entities":[{"entity_type":"laboratory_result","original_text":"Hemoglobin 13.4 g/dL (12.0-16.0)"},{"entity_type":"laboratory_result","original_text":"Glucose 106 mg/dL (70-99)"}]},
+ {"id":"discharge-001","document_type":"discharge","text":"DISCHARGE SUMMARY\nDiagnosis: pneumonia, documented on admission.\nMedication: amoxicillin 500 mg three times daily.\nFollow-up in 7 days.","expected_entities":[]},
+ {"id":"radiology-001","document_type":"radiology","text":"CT CHEST\nFindings: No pleural effusion. Mild bibasilar opacity.\nImpression: No acute process.","expected_entities":[]}
+]

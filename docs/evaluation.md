@@ -1,0 +1,5 @@
+# Evaluation
+
+Run `python -m app.evaluation.run` from `backend`; it writes `data/synthetic/evaluation.json`. The small runner reports classification accuracy and macro-F1, plus laboratory entity exact match on entries with labels. Its fixture set is illustrative only and cannot support a performance or clinical-validity claim.
+
+Before research use, prepare a held-out, independently annotated synthetic or appropriately governed deidentified corpus. Split related documents by patient. Report document accuracy/macro-F1; entity precision/recall/strict-span F1; lab value/unit/reference exact match; supported-summary claim rate and critical-fact omission rate; QA correctness and evidence support; OCR character/word error rate; and processing success/failure categories. Compare the rule baseline with a specified pretrained biomedical model and the report-specific pipeline. Record model/version, data split, exclusions, and confidence intervals. No pretrained-model baseline or those metrics are currently implemented.

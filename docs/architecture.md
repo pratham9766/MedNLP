@@ -1,0 +1,7 @@
+# Architecture
+
+The Vite/React frontend calls the FastAPI `/api/v1` service. Uploads are validated by MIME type, signature, and byte limit, receive a random storage key, and are saved outside the public tree. The current development implementation assigns reports to one local demo account and schedules processing in an in-process thread pool. SQLite stores users, documents, analysis JSON, review annotations, and minimal audit events. PDF extraction preserves page numbers; PyMuPDF reads embedded text, and pytesseract/Tesseract is attempted for pages without it. Extraction and report classification live in `app/nlp`, parsing and retrieval in `app/services.py`, persistence in `app/models.py`, and HTTP routing in `app/main.py`.
+
+Extracted entities carry their original source sentence and page. The lab pipeline preserves the reported result, unit, and reference interval as written. The current prototype does not calculate out-of-range flags because comparators, units, and interval parsing require stronger validation. The summary is a bounded description of extraction. QA uses lexical passage retrieval and returns source quotations; it is not generative QA.
+
+The database is initialized with SQLAlchemy `create_all` for local setup. Schema migrations and PostgreSQL deployment configuration are not yet implemented. Do not expose this development server to a network or use it with real patient data.
