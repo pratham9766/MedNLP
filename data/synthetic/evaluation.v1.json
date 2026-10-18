@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "dataset": "authored synthetic only; not clinical evidence",
+  "annotation_file": "data/synthetic/annotations.v1.jsonl",
+  "split": "synthetic_eval",
+  "patient_group_split_check": "passed",
+  "near_duplicate_cross_split_check": "passed",
+  "development_document_count": 5,
+  "synthetic_eval_document_count": 6,
+  "rule_baseline": {
+    "document_count": 6,
+    "annotated_entity_count": 12,
+    "document_type_correct": 6,
+    "document_type_accuracy": 1.0,
+    "processing_failures": [],
+    "processing_failure_count": 0,
+    "unsupported_document_count": 1,
+    "entity_metrics": {
+      "true_positive": 9,
+      "false_positive": 3,
+      "false_negative": 3,
+      "precision": 0.75,
+      "recall": 0.75,
+      "strict_span_f1": 0.75,
+      "per_entity": {
+        "diagnosis_or_symptom": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "strict_span_f1": 1.0
+        },
+        "laboratory_result": {
+          "true_positive": 3,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.75,
+          "strict_span_f1": 0.75
+        },
+        "medication": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "strict_span_f1": 1.0
+        },
+        "radiology_finding": {
+          "true_positive": 3,
+          "false_positive": 2,
+          "false_negative": 2,
+          "precision": 0.6,
+          "recall": 0.6,
+          "strict_span_f1": 0.6
+        }
+      },
+      "lab_value_exact_match": {
+        "correct": 3,
+        "count": 3,
+        "accuracy": 1.0
+      },
+      "unit_accuracy": {
+        "correct": 3,
+        "count": 3,
+        "accuracy": 1.0
+      },
+      "reference_interval_accuracy": {
+        "correct": 3,
+        "count": 3,
+        "accuracy": 1.0
+      },
+      "negation_error_rate": {
+        "errors": 0,
+        "count": 9,
+        "rate": 0.0
+      },
+      "uncertainty_error_rate": {
+        "errors": 0,
+        "count": 9,
+        "rate": 0.0
+      }
+    }
+  },
+  "pretrained_baseline": {
+    "status": "unavailable",
+    "model_id": "d4data/biomedical-ner-all",
+    "model_revision": "main",
+    "error": "ModuleNotFoundError: No module named 'transformers'"
+  }
+}

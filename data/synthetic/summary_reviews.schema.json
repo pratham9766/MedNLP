@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mednlp:summary-review:v1",
+  "title": "MedNLP manually adjudicated summary review",
+  "type": "object",
+  "required": ["schema_version", "document_id", "reviewed", "claims", "critical_omission", "contradiction", "reviewer_id"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "document_id": {"type": "string", "minLength": 1},
+    "reviewed": {"type": "boolean"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "supported", "evidence_correct"],
+        "properties": {
+          "claim": {"type": "string"},
+          "supported": {"type": ["boolean", "null"]},
+          "evidence_correct": {"type": ["boolean", "null"]},
+          "source_page": {"type": ["integer", "null"], "minimum": 1},
+          "start_char": {"type": ["integer", "null"], "minimum": 0},
+          "end_char": {"type": ["integer", "null"], "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "critical_omission": {"type": ["boolean", "null"]},
+    "contradiction": {"type": ["boolean", "null"]},
+    "reviewer_id": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,2 @@
+# JSONL template: one manually adjudicated summary record per line; no reviewed records or scores supplied.
+# Required fields: document_id, reviewed, claims[{claim,supported,evidence_correct,source_page,start_char,end_char}], critical_omission, contradiction, reviewer_id.

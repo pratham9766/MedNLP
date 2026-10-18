@@ -13,6 +13,11 @@ class EvidenceItem(BaseModel):
     abnormal_flag: str | None = None
     source_page: int | None = None
     source_text: str
+    span_start: int | None = None
+    span_end: int | None = None
+    negated: bool = False
+    uncertain: bool = False
+    temporality: Literal["current", "historical", "unknown"] = "unknown"
     review_status: str = "needs_review"
     validation_warnings: list[str] = Field(default_factory=list)
 class PageText(BaseModel):

@@ -1,0 +1,3 @@
+baseline,status,documents,gold_entities,precision,recall,strict_span_f1,processing_failures
+rule_baseline,available,6,12,0.75,0.75,0.75,0
+pretrained_baseline,unavailable,,,,,,

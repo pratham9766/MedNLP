@@ -1,4 +1,5 @@
 import json, logging, mimetypes, uuid
+from contextlib import asynccontextmanager
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from fastapi import FastAPI, Depends, File, HTTPException, UploadFile
@@ -6,6 +7,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
+from sqlalchemy.orm.attributes import flag_modified
 from app.core.config import settings
 from app.db import Base, engine, get_db, SessionLocal
 from app.models import User, Document, AnalysisResult, ReviewAnnotation, AuditEvent
@@ -16,13 +18,17 @@ from app.nlp.extract import process_pages
 
 logging.basicConfig(level=logging.INFO)
 log=logging.getLogger("mednlp")
-app=FastAPI(title="MedNLP Insight API",version="0.1.0",description="Local research prototype; not for diagnosis.")
+@asynccontextmanager
+async def lifespan(_app):
+    startup()
+    yield
+
+app=FastAPI(title="MedNLP Insight API",version="0.1.0",description="Local research prototype; not for diagnosis.",lifespan=lifespan)
 app.add_middleware(CORSMiddleware,allow_origins=["http://localhost:5173"],allow_methods=["*"],allow_headers=["*"])
 pool=ThreadPoolExecutor(max_workers=2)
 MAX_PAGES=100
 ALLOWED={"application/pdf":".pdf","image/png":".png","image/jpeg":".jpg"}
 
-@app.on_event("startup")
 def startup():
     settings.storage_dir.mkdir(parents=True,exist_ok=True)
     Base.metadata.create_all(bind=engine)
@@ -145,7 +151,7 @@ def review(document_id:int,request:ReviewRequest,db:Session=Depends(get_db),user
     if item is None: raise HTTPException(404,"Extracted item not found.")
     db.add(ReviewAnnotation(analysis_result_id=d.analysis.id,item_id=request.item_id,original_value=item.get("normalized_value") or item["original_text"],corrected_value=request.corrected_value,reviewer_feedback=request.feedback))
     item["review_status"]="reviewed"; item["reviewer_correction"]=request.corrected_value
-    d.analysis.structured_data=data; d.analysis.review_status="reviewed"; db.commit(); return {"status":"saved"}
+    d.analysis.structured_data=data; flag_modified(d.analysis,"structured_data"); d.analysis.review_status="reviewed"; db.commit(); return {"status":"saved"}
 
 @app.get("/api/v1/documents/{document_id}/export")
 def export(document_id:int,db:Session=Depends(get_db),user:User=Depends(current_user)):

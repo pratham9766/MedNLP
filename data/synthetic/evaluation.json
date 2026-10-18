@@ -1,0 +1,15 @@
+{
+  "fixture_count": 3,
+  "document_classification_accuracy": 1.0,
+  "document_classification_macro_f1": 1.0,
+  "lab_entity_exact_match_on_labeled_fixtures": 1.0,
+  "status": "synthetic smoke evaluation only; not clinical evidence",
+  "unsupported_metrics": [
+    "biomedical-model baseline",
+    "span precision/recall",
+    "summary support/omission",
+    "QA correctness/support",
+    "OCR CER/WER",
+    "reliability categories"
+  ]
+}

@@ -1,0 +1,3 @@
+# Optional pretrained NER dependencies. Install only for explicit model evaluation.
+transformers==4.57.1
+torch==2.9.1
