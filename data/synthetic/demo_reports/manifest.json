@@ -1,0 +1,136 @@
+{
+  "title": "MedNLP Insight synthetic demonstration reports",
+  "disclaimer": "All cases and values are fictional and for software demonstration/testing only. Not clinical guidance.",
+  "reports": [
+    {
+      "id": "demo-diabetes-lab-01",
+      "filename": "01_type2_diabetes_metabolic_followup.pdf",
+      "text_filename": "01_type2_diabetes_metabolic_followup.txt",
+      "document_type": "laboratory",
+      "scenario": "Type 2 diabetes follow-up with mixed glycemic, renal-screening, and lipid results.",
+      "page_count": 2,
+      "review_focus": [
+        "multi-analyte values",
+        "reported flags vs. reference intervals",
+        "urine albumin ratio",
+        "source evidence"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-ckd-lab-01",
+      "filename": "02_chronic_kidney_disease_chemistry.pdf",
+      "text_filename": "02_chronic_kidney_disease_chemistry.txt",
+      "document_type": "laboratory",
+      "scenario": "Chronic kidney disease referral with serial chemistry values and deliberately missing intervals.",
+      "page_count": 2,
+      "review_focus": [
+        "comparators",
+        "missing intervals",
+        "unit preservation",
+        "longitudinal values are not a trend diagnosis"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-pneumonia-discharge-01",
+      "filename": "03_community_acquired_pneumonia_discharge.pdf",
+      "text_filename": "03_community_acquired_pneumonia_discharge.txt",
+      "document_type": "discharge",
+      "scenario": "Hospital discharge summary for a treated respiratory infection with documented uncertainty and medication detail.",
+      "page_count": 2,
+      "review_focus": [
+        "diagnosis vs. differential",
+        "negation",
+        "medication detail",
+        "follow-up actions"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-pulmonary-imaging-01",
+      "filename": "04_chest_ct_indeterminate_opacity.pdf",
+      "text_filename": "04_chest_ct_indeterminate_opacity.txt",
+      "document_type": "radiology",
+      "scenario": "Chest CT narrative with separate Findings, Impression, and Recommendation; includes hedging and negation.",
+      "page_count": 2,
+      "review_focus": [
+        "section separation",
+        "uncertainty language",
+        "negative findings",
+        "recommendation is not a diagnosis"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-iron-deficiency-lab-01",
+      "filename": "05_microcytic_anemia_iron_studies.pdf",
+      "text_filename": "05_microcytic_anemia_iron_studies.txt",
+      "document_type": "laboratory",
+      "scenario": "CBC and iron studies with mixed flags, low results, and explicit limits on interpretation.",
+      "page_count": 2,
+      "review_focus": [
+        "multi-panel lab parsing",
+        "qualifiers",
+        "report-provided reference ranges",
+        "no disease inference from a single value"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-heart-failure-discharge-01",
+      "filename": "06_heart_failure_discharge_medication_reconciliation.pdf",
+      "text_filename": "06_heart_failure_discharge_medication_reconciliation.txt",
+      "document_type": "discharge",
+      "scenario": "Heart-failure admission and discharge with medication changes, allergy context, and follow-up ambiguity.",
+      "page_count": 2,
+      "review_focus": [
+        "active vs. held medicines",
+        "medication instructions",
+        "historical context",
+        "recommendation vs. booked follow-up"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-complex-patient-discharge-01",
+      "filename": "07_comprehensive_patient_admission_discharge.pdf",
+      "text_filename": "07_comprehensive_patient_admission_discharge.txt",
+      "document_type": "discharge",
+      "scenario": "A detailed fictional admission-to-discharge record with history, medications, investigations, course, and follow-up.",
+      "page_count": 4,
+      "review_focus": [
+        "dense multi-section patient narrative",
+        "documented diagnoses vs. symptoms and history",
+        "medication dose, route, frequency, and changes",
+        "negative findings and unresolved information",
+        "page-linked evidence and report-scoped questions"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    },
+    {
+      "id": "demo-differential-workup-01",
+      "filename": "08_complex_differential_diagnosis_workup.pdf",
+      "text_filename": "08_complex_differential_diagnosis_workup.txt",
+      "document_type": "discharge",
+      "scenario": "A fictional multidisciplinary workup with several explicitly documented differential causes, evidence for and against, and unresolved findings.",
+      "page_count": 3,
+      "review_focus": [
+        "confirmed diagnoses vs. differential possibilities",
+        "evidence supporting and not supporting each possibility",
+        "negation, uncertainty, and temporal context",
+        "recommendations vs. completed investigations",
+        "Q&A abstention when the record is insufficient"
+      ],
+      "synthetic_identity": "fictional; no real patient data",
+      "synthetic": true
+    }
+  ]
+}

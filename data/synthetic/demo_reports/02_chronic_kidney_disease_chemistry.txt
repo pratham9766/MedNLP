@@ -1,0 +1,49 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+02 CHRONIC KIDNEY DISEASE CHEMISTRY
+LABORATORY RESULTS - RENAL FUNCTION PANEL
+Synthetic case: DEMO-REN-2087 | Collection: 2026-06-03 09:40 | Specimen: Serum
+Ordering service: Nephrology | Referral context: chronic kidney disease, stage documented
+by referring clinician as 3b; this report does not independently assign a disease stage.
+TEST / ANALYTE                         RESULT        UNIT          REFERENCE       FLAG
+Sodium 137 mmol/L (135-145)
+Potassium 5.2 mmol/L H (3.5-5.1)
+Chloride 103 mmol/L (98-107)
+Carbon dioxide 20 mmol/L L (22-29)
+Urea nitrogen (BUN) 38 mg/dL H (7-20)
+Creatinine 1.86 mg/dL H (0.60-1.10)
+Estimated GFR                        39            mL/min/1.73m2 >=60            L
+Calcium 8.8 mg/dL (8.6-10.2)
+Phosphorus 4.7 mg/dL H (2.5-4.5)
+Albumin 3.7 g/dL (3.5-5.0)
+Prior values supplied for comparison (not directly comparable if methods differ):
+2026-03-02 creatinine 1.74 mg/dL; eGFR 43 mL/min/1.73m2.
+2025-12-08 creatinine 1.69 mg/dL; eGFR 45 mL/min/1.73m2.
+No reference interval was printed for eGFR in the prior outside laboratory record.
+Laboratory note: eGFR estimates may be affected by clinical factors and are not measured GFR.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+02 CHRONIC KIDNEY DISEASE CHEMISTRY
+LABORATORY RESULTS - URINE AND ADDITIONAL TESTS
+Synthetic case: DEMO-REN-2087 | Collection: 2026-06-03 | Page 2 of 2
+Urine albumin/creatinine ratio 286 mg/g H (<30)
+Urine albumin 34 mg/L
+Urine creatinine 119 mg/dL
+Hemoglobin 10.8 g/dL L (12.0-16.0)
+Ferritin 74 ng/mL (15-150)
+Transferrin saturation 19 % L (20-50)
+URINALYSIS (MIDSTREAM SPECIMEN)
+Appearance                              Clear
+Specific gravity                       1.014                         1.005-1.030
+Protein                                1+
+Blood                                  Negative
+Nitrite                                Negative
+Leukocyte esterase                     Trace
+Microscopy: 0-2 RBC/hpf; 3-5 WBC/hpf; no casts reported.
+The outside report did not state units for protein by dipstick. No numeric conversion applied.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

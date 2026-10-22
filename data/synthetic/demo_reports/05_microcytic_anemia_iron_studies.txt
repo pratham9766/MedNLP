@@ -1,0 +1,44 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+05 MICROCYTIC ANEMIA IRON STUDIES
+LABORATORY RESULTS - COMPLETE BLOOD COUNT
+Synthetic case: DEMO-HEME-5179 | Collection: 2026-06-21 07:55 | Specimen: EDTA whole blood
+Ordering service: Primary Care | Order comment: fatigue evaluation; no diagnosis supplied.
+TEST / ANALYTE                         RESULT        UNIT          REFERENCE       FLAG
+White blood cell count 6.8 10^9/L (4.0-11.0)
+Red blood cell count 4.12 10^12/L (3.80-5.20)
+Hemoglobin 10.2 g/dL L (12.0-16.0)
+Hematocrit 32.8 % L (36.0-46.0)
+MCV 79.6 fL L (80.0-100.0)
+MCH 24.8 pg L (27.0-33.0)
+MCHC 31.1 g/dL L (32.0-36.0)
+RDW 16.8 % H (11.5-14.5)
+Platelet count 388 10^9/L (150-400)
+Neutrophils 61 % (40-75)
+Lymphocytes 28 % (20-45)
+Monocytes 7 % (2-10)
+Eosinophils 3 % (0-6)
+Basophils 1 % (0-2)
+Peripheral smear comment: Mild microcytosis and hypochromia. No blasts identified.
+Morphology comment is descriptive and does not establish an underlying cause.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+05 MICROCYTIC ANEMIA IRON STUDIES
+LABORATORY RESULTS - IRON STUDIES AND RETICULOCYTES
+Synthetic case: DEMO-HEME-5179 | Collection: 2026-06-21 | Page 2 of 2
+Serum iron 32 ug/dL L (50-170)
+Total iron-binding capacity 402 ug/dL (250-450)
+Transferrin saturation 8 % L (20-50)
+Ferritin 9 ng/mL L (15-150)
+Reticulocyte count 1.1 % (0.5-2.5)
+Vitamin B12 412 pg/mL (200-900)
+Folate 11.2 ng/mL (>4.0)
+Specimen note: No visible clot. Results verified on repeat analysis where required by protocol.
+The report contains no menstrual, dietary, bleeding, or gastrointestinal history.
+No source in this laboratory report identifies the cause of the measured results.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

@@ -1,0 +1,51 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+03 COMMUNITY ACQUIRED PNEUMONIA DISCHARGE
+HOSPITAL DISCHARGE SUMMARY
+Synthetic case: DEMO-PULM-3310 | Admission: 2026-04-10 | Discharge: 2026-04-13
+Facility: Fictional North River Medical Center | Service: Hospital Medicine
+REASON FOR ADMISSION
+Fever, productive cough, pleuritic right-sided discomfort, and reduced oral intake.
+Symptoms began approximately four days before admission, according to the case narrative.
+DISCHARGE DIAGNOSES
+1. Community-acquired pneumonia, right lower lobe - documented as the principal diagnosis.
+2. Mild dehydration - improved after intravenous fluids.
+3. Asthma history - no acute exacerbation documented during this admission.
+RELEVANT HISTORY
+The synthetic record lists asthma and seasonal allergic rhinitis. No chronic oxygen use
+reported.
+Medication allergy: rash after trimethoprim-sulfamethoxazole, per patient history.
+No penicillin allergy is listed in the supplied record.
+HOSPITAL COURSE
+Initial chest radiograph described a patchy right basilar opacity. The treating team documented
+that the presentation was consistent with pneumonia; viral infection remained in the
+differential.
+Blood cultures showed no growth at 48 hours. Respiratory viral panel was negative for the
+targets tested. No organism was identified. Oxygen saturation remained above 94% on room air
+before discharge. The note states there was no hypotension or confusion.
+Treatment included intravenous fluids and empiric antibiotics; see medication reconciliation.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+03 COMMUNITY ACQUIRED PNEUMONIA DISCHARGE
+HOSPITAL DISCHARGE SUMMARY - CONTINUED
+Synthetic case: DEMO-PULM-3310 | Page 2 of 2
+DISCHARGE MEDICATIONS
+Amoxicillin 1,000 mg by mouth every 8 hours for 2 more days; complete the documented course.
+Azithromycin 250 mg by mouth once daily for 2 more days; final dose listed for 2026-04-15.
+Albuterol inhaler, 2 puffs by inhalation every 4-6 hours as needed for wheezing.
+Acetaminophen 500 mg by mouth every 6 hours as needed for pain or fever; maximum per label.
+No dose change to the patient's listed maintenance inhaled corticosteroid is documented.
+STATUS AT DISCHARGE
+Afebrile for 24 hours; eating and drinking; ambulatory without assistance. Cough persists but is
+reported as improved. These are documented discharge observations, not a guarantee of recovery.
+FOLLOW-UP AND RETURN PRECAUTIONS
+Primary-care follow-up requested within 5-7 days. Repeat chest imaging in approximately 6 weeks
+may be considered if symptoms persist, per the discharge note. This is a recommendation, not an
+appointment already booked. Seek urgent assessment for worsening shortness of breath, blue lips,
+new confusion, inability to keep fluids down, or recurrent high fever, as written in the note.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

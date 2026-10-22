@@ -1,0 +1,110 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+07 COMPREHENSIVE PATIENT ADMISSION DISCHARGE
+COMPREHENSIVE HOSPITAL ADMISSION AND DISCHARGE SUMMARY
+Synthetic patient: CASE-PAT-7408 | Fictional name: Jordan Example | Age: 58 years
+Encounter: 2026-07-08 to 2026-07-12 | Facility: Fictional Cedar Valley Hospital
+Service: General Medicine | Attending: Fictional clinician record | Record status: Final
+This invented case is for software demonstration and testing only.
+PRESENTING CONCERN AND HISTORY OF PRESENT ILLNESS
+The patient presented with five days of increasing fatigue, reduced exercise tolerance,
+intermittent dry cough, and mild breathlessness when climbing stairs. The patient reported
+no chest pain, hemoptysis, syncope, unilateral leg swelling, or measured fever. Oral intake
+was lower than usual for two days. No recent travel or known sick contact was documented.
+A home temperature log was not available. Symptom chronology is based on the fictional
+history supplied at admission and was not independently verified in this example.
+RELEVANT MEDICAL, SURGICAL, AND SOCIAL HISTORY
+History listed in the record: hypertension, type 2 diabetes mellitus, and mild intermittent
+asthma. Prior appendectomy is listed in the surgical history. No prior venous thrombosis
+or heart-failure admission is documented in the supplied case. Former tobacco use is listed
+as approximately 8 pack-years; quit date is recorded as 2018. Alcohol history is not stated.
+Baseline exercise capacity and most recent outpatient renal results are not available here.
+ALLERGIES AND HOME MEDICATIONS
+Allergy list: trimethoprim-sulfamethoxazole - rash, reported by patient; reaction date unknown.
+No medication allergy to penicillin is listed in this fictional chart extract.
+Home medication list: metformin 500 mg by mouth twice daily; amlodipine 5 mg by mouth
+once daily; budesonide-formoterol inhaler, 1 puff twice daily; albuterol inhaler as needed.
+Adherence and last dose were not confirmed. No anticoagulant is listed on the supplied list.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/4
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+07 COMPREHENSIVE PATIENT ADMISSION DISCHARGE
+ADMISSION ASSESSMENT AND INVESTIGATIONS - CONTINUED
+Synthetic patient: CASE-PAT-7408 | Encounter date: 2026-07-08 | Page 2 of 4
+INITIAL OBSERVATIONS
+Blood pressure 146/88 mmHg; pulse 96/min; respiratory rate 20/min; temperature 37.2 C;
+oxygen saturation 95% on room air. Weight 82.4 kg. The record does not provide a prior
+baseline weight. These values are reproduced as recorded in the fictional case.
+PHYSICAL EXAMINATION DOCUMENTED AT ADMISSION
+Alert and conversant. No acute distress documented. Mild expiratory wheeze was heard
+bilaterally. No focal crackles were documented. Cardiac rhythm was regular in the note.
+No peripheral edema or calf asymmetry was recorded. Abdomen was soft without focal
+tenderness. Neurologic examination was described as grossly non-focal. Examination
+findings are the author's documentation and are not independently verified by this fixture.
+SELECTED LABORATORY RESULTS FROM THE ATTACHED FICTIONAL REPORT
+White blood cell count 10.9 10^9/L (4.0-11.0); hemoglobin 12.4 g/dL (12.0-16.0).
+Sodium 137 mmol/L (135-145); potassium 4.2 mmol/L (3.5-5.1); creatinine 1.08 mg/dL
+(0.60-1.10); glucose 184 mg/dL (70-99), reported high. Hemoglobin A1c 7.8% (4.0-5.6),
+reported high. C-reactive protein 18 mg/L (0-5), reported high. Troponin was below the
+laboratory reporting threshold on two samples. D-dimer was not ordered in this case.
+No additional reference interval is inferred where the fictional report does not print one.
+OTHER TESTING
+Electrocardiogram: sinus rhythm; no acute ischemic change described in the report.
+Chest radiograph: mild bibasilar linear opacity, favored to represent atelectatic change;
+no focal air-space consolidation or pleural effusion reported. Respiratory viral panel was
+negative for the targets tested. Blood culture showed no growth at 48 hours.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/4
+
+--- PAGE 3 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+07 COMPREHENSIVE PATIENT ADMISSION DISCHARGE
+HOSPITAL COURSE, ASSESSMENT, AND MEDICATION RECONCILIATION
+Synthetic patient: CASE-PAT-7408 | Encounter date: 2026-07-10 | Page 3 of 4
+HOSPITAL COURSE
+The patient was observed on the general medicine service. Inhaled bronchodilator treatment
+was given for wheeze, with improvement documented in the progress note. No supplemental
+oxygen was required. Intravenous fluids were given for reduced oral intake; oral intake
+improved. No fever was recorded during the documented stay. No antibiotic course was
+started because the treating team did not document a bacterial infection as established.
+The mild breathlessness improved but the record does not state that every symptom resolved.
+DISCHARGE DIAGNOSES AND STATUS
+1. Wheezing with mild intermittent asthma history - treated during the stay; the discharge
+record does not state that spirometry confirmed an acute asthma exacerbation.
+2. Fatigue and exertional breathlessness - symptoms documented; a single definitive cause
+is not established in this record.
+3. Type 2 diabetes mellitus with elevated glucose values in the supplied measurements.
+4. Hypertension - history documented; no hypertensive emergency recorded.
+No pulmonary embolism, bacterial pneumonia, acute coronary syndrome, or heart failure is
+documented as a confirmed discharge diagnosis in this fictional case.
+MEDICATION RECONCILIATION - DISCHARGE INSTRUCTIONS
+Continue metformin 500 mg by mouth twice daily with meals; the note requests routine
+outpatient review. Continue amlodipine 5 mg by mouth once daily. Continue budesonide-
+formoterol inhaler, 1 puff by inhalation twice daily. Albuterol inhaler, 2 puffs by
+inhalation every 4 hours as needed for wheezing. No new antibiotic or anticoagulant is
+listed at discharge. The medication list is reproduced from this synthetic summary.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+3/4
+
+--- PAGE 4 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+07 COMPREHENSIVE PATIENT ADMISSION DISCHARGE
+DISCHARGE PLAN AND LIMITATIONS - CONTINUED
+Synthetic patient: CASE-PAT-7408 | Encounter date: 2026-07-12 | Page 4 of 4
+DISCHARGE CONDITION AND FOLLOW-UP
+Condition at discharge is described as stable on room air, ambulatory, and tolerating oral
+intake. Primary-care follow-up was requested within 7 to 14 days; a booked appointment
+date is not present in this record. Repeat glucose review was requested by the treating
+team. Return precautions were documented as increasing breathlessness, chest pain, fever,
+fainting, or inability to maintain fluids. The record does not establish whether follow-up
+was scheduled or whether any requested action was completed after discharge.
+DOCUMENTATION LIMITATIONS
+No prior pulmonary-function report, echocardiogram, or ambulatory oxygen measurement is
+included. Smoking cessation status is based on the history provided. The cause of fatigue
+and exertional breathlessness remains incompletely characterized in the supplied note.
+This example preserves the source's uncertainty and does not add diagnoses or advice.
+END OF FICTIONAL SUMMARY - TRAINING DATA ONLY
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+4/4

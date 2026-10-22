@@ -1,0 +1,92 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+08 COMPLEX DIFFERENTIAL DIAGNOSIS WORKUP
+DIAGNOSTIC WORKUP SUMMARY - DIFFERENTIAL ASSESSMENT
+Synthetic patient: CASE-DIFF-8651 | Fictional name: Morgan Sample | Age: 67 years
+Encounter: 2026-08-19 to 2026-08-21 | Fictional service: Acute Medical Assessment
+Reason for review: six weeks of intermittent breathlessness and reduced exercise tolerance.
+This is an invented test report. Differential entries below are attributed to the fictional
+clinical team and are not diagnoses or recommendations made by MedNLP Insight.
+PRESENTING HISTORY
+The patient described breathlessness when walking uphill and an intermittent dry cough.
+Symptoms were not reported at rest. No fever, purulent sputum, pleuritic pain, hemoptysis,
+orthopnea, or unilateral leg swelling was documented. The note records a 3 kg weight gain
+over two months, although a calibrated prior weight is unavailable. No recent surgery,
+immobility, or long-distance travel is recorded. Symptom severity is not quantified with a
+validated scale in the supplied documents.
+BACKGROUND AND MEDICATION CONTEXT
+History listed: hypertension, chronic obstructive pulmonary disease in an outside problem
+list, and remote tobacco exposure (approximately 22 pack-years; quit in 2016 per patient).
+No previous pulmonary-function test is attached. The patient reports taking tiotropium
+inhaler once daily and salbutamol inhaler as needed; adherence is not verified. No known
+history of venous thromboembolism is documented in the supplied record. Allergy section
+lists no known drug allergy, but reconciliation is marked incomplete.
+INITIAL EXAMINATION AND OBSERVATIONS
+Blood pressure 138/82 mmHg; pulse 88/min; respiratory rate 18/min; temperature 36.8 C;
+oxygen saturation 94% on room air. Mild expiratory wheeze was documented. No crackles,
+raised jugular venous pressure, or peripheral edema was recorded on that examination.
+Findings represent one assessment and do not establish the absence of intermittent signs.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/3
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+08 COMPLEX DIFFERENTIAL DIAGNOSIS WORKUP
+DIFFERENTIAL ASSESSMENT - EVIDENCE REVIEW
+Synthetic patient: CASE-DIFF-8651 | Page 2 of 3 | Assessment date: 2026-08-20
+The following possibilities are copied from the fictional team assessment. They remain
+differential considerations unless separately listed as a confirmed diagnosis.
+1. Obstructive-airway symptom recurrence / COPD or asthma-related airflow limitation
+Evidence recorded in support: intermittent wheeze on examination and prior obstructive
+airway disease in an outside problem list. The patient uses maintenance inhaler therapy.
+Evidence recorded as limiting: no spirometry is available; baseline symptoms and inhaler
+adherence were not verified; no acute respiratory distress was observed in this assessment.
+Status in note: possible contributor; not objectively confirmed during this encounter.
+2. Cardiac dysfunction or volume-related cause of exertional breathlessness
+Evidence recorded in support: patient-reported weight increase over two months and reduced
+exercise tolerance. NT-proBNP is 510 pg/mL; the laboratory report supplies no interpretive
+cutoff for this patient's age or setting. No prior echocardiogram is attached.
+Evidence recorded as limiting: no peripheral edema or raised jugular venous pressure was
+documented; chest radiograph did not report pulmonary edema or pleural effusion.
+Status in note: remains possible; no confirmed heart-failure diagnosis is made here.
+3. Lower respiratory infection, including atypical infection
+Evidence recorded in support: cough is present and C-reactive protein is 12 mg/L (reported
+reference 0-5 mg/L). Evidence recorded as limiting: no fever or purulent sputum was reported;
+white blood cell count is 7.4 10^9/L (4.0-11.0); chest radiograph shows no focal air-space
+consolidation. Viral panel was negative for the listed targets only.
+Status in note: less supported by currently available findings; infection is not excluded.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/3
+
+--- PAGE 3 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+08 COMPLEX DIFFERENTIAL DIAGNOSIS WORKUP
+DIFFERENTIAL ASSESSMENT - TESTS AND PLAN
+Synthetic patient: CASE-DIFF-8651 | Page 3 of 3 | Assessment date: 2026-08-21
+4. Pulmonary vascular cause, including pulmonary embolism
+Evidence recorded in support: exertional breathlessness is present. No D-dimer or CT
+pulmonary angiogram was performed in the supplied encounter. Evidence recorded as limiting:
+no pleuritic pain, hemoptysis, unilateral leg swelling, recent surgery, or known prior
+venous thromboembolism is documented. Status in note: not established; this record does
+not document a completed rule-out evaluation or confirmatory test.
+5. Anemia or metabolic contributor
+Hemoglobin 12.9 g/dL (laboratory reference 13.0-17.0), flagged low by the reporting lab.
+Sodium 139 mmol/L (135-145); creatinine 1.12 mg/dL (0.70-1.30); glucose 108 mg/dL
+(70-110). The clinician note lists anemia as a possible contributor, but states that this
+single mildly low measurement does not explain the full symptom history by itself.
+No iron profile, reticulocyte count, or prior hemoglobin trend is attached.
+IMAGING AND OTHER RECORDED RESULTS
+Chest radiograph: mild hyperinflation; no focal consolidation, pulmonary edema, or pleural
+effusion reported. ECG: sinus rhythm, no acute ischemic change described. Troponin below
+the reporting threshold. The report does not include echocardiography or pulmonary function
+testing. A negative finding on one test does not resolve every differential possibility.
+DOCUMENTED PLAN AND OUTCOME
+The team documented outpatient pulmonary-function testing and echocardiography as requested
+next steps. No appointment date or completed test result is present. The patient was discharged
+in stable condition with existing inhalers listed for continuation and primary-care review
+requested within 10 days. This summary does not state which differential diagnosis is correct.
+Do not infer a definitive cause from this fictional report; preserve the clinician's
+uncertainty.
+END OF FICTIONAL DIFFERENTIAL WORKUP - NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+3/3

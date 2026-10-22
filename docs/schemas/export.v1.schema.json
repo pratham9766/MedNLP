@@ -1,0 +1,662 @@
+{
+  "$defs": {
+    "Analysis": {
+      "properties": {
+        "schema_version": {
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "document_type": {
+          "enum": [
+            "laboratory",
+            "discharge",
+            "radiology",
+            "unknown"
+          ],
+          "title": "Document Type",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "pages": {
+          "items": {
+            "$ref": "#/$defs/PageText"
+          },
+          "title": "Pages",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "classification_evidence": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Classification Evidence",
+          "type": "object"
+        },
+        "summary_evidence": {
+          "items": {
+            "$ref": "#/$defs/SummaryEvidence"
+          },
+          "title": "Summary Evidence",
+          "type": "array"
+        },
+        "summary_method": {
+          "default": "deterministic-source-statements-v1",
+          "title": "Summary Method",
+          "type": "string"
+        },
+        "model_ids": {
+          "default": [
+            "deterministic-rules-v1"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Model Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "document_type",
+        "items",
+        "pages",
+        "summary",
+        "warnings"
+      ],
+      "title": "Analysis",
+      "type": "object"
+    },
+    "EvidenceItem": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "entity_type": {
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "original_text": {
+          "title": "Original Text",
+          "type": "string"
+        },
+        "analyte": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Analyte"
+        },
+        "numeric_value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Numeric Value"
+        },
+        "comparator": {
+          "anyOf": [
+            {
+              "enum": [
+                "<",
+                ">",
+                "\u2264",
+                "\u2265"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comparator"
+        },
+        "qualitative_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Qualitative Value"
+        },
+        "medication_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Medication Name"
+        },
+        "dose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dose"
+        },
+        "route": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Route"
+        },
+        "frequency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frequency"
+        },
+        "modality": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Modality"
+        },
+        "body_region": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body Region"
+        },
+        "report_section": {
+          "anyOf": [
+            {
+              "enum": [
+                "findings",
+                "impression",
+                "recommendations",
+                "other"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Report Section"
+        },
+        "normalized_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "reference_interval": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Interval"
+        },
+        "lab_reported_flag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lab Reported Flag"
+        },
+        "abnormal_flag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abnormal Flag"
+        },
+        "comparison_status": {
+          "default": "comparison_unavailable",
+          "enum": [
+            "within_reported_range",
+            "below_reported_range",
+            "above_reported_range",
+            "comparison_unavailable"
+          ],
+          "title": "Comparison Status",
+          "type": "string"
+        },
+        "comparison_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comparison Note"
+        },
+        "reference_low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Low"
+        },
+        "reference_high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference High"
+        },
+        "source_page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Page"
+        },
+        "source_text": {
+          "title": "Source Text",
+          "type": "string"
+        },
+        "span_start": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Start"
+        },
+        "span_end": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span End"
+        },
+        "extraction_method": {
+          "default": "deterministic-rules-v1",
+          "title": "Extraction Method",
+          "type": "string"
+        },
+        "provenance": {
+          "default": "source_text",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "schema_version": {
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "negated": {
+          "default": false,
+          "title": "Negated",
+          "type": "boolean"
+        },
+        "uncertain": {
+          "default": false,
+          "title": "Uncertain",
+          "type": "boolean"
+        },
+        "temporality": {
+          "default": "unknown",
+          "enum": [
+            "current",
+            "historical",
+            "unknown"
+          ],
+          "title": "Temporality",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "needs_review",
+          "title": "Review Status",
+          "type": "string"
+        },
+        "reviewer_correction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer Correction"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Validation Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "entity_type",
+        "original_text",
+        "source_text"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "ExportDocument": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "filename": {
+          "title": "Filename",
+          "type": "string"
+        },
+        "mime_type": {
+          "title": "Mime Type",
+          "type": "string"
+        },
+        "file_size": {
+          "title": "File Size",
+          "type": "integer"
+        },
+        "document_type": {
+          "title": "Document Type",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "page_count": {
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "review_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Status"
+        }
+      },
+      "required": [
+        "id",
+        "filename",
+        "mime_type",
+        "file_size",
+        "document_type",
+        "status",
+        "page_count",
+        "created_at"
+      ],
+      "title": "ExportDocument",
+      "type": "object"
+    },
+    "ExportReviewEntry": {
+      "properties": {
+        "item_id": {
+          "title": "Item Id",
+          "type": "string"
+        },
+        "reviewer_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer Id"
+        },
+        "change_type": {
+          "enum": [
+            "reviewed",
+            "corrected"
+          ],
+          "title": "Change Type",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item_id",
+        "change_type",
+        "created_at"
+      ],
+      "title": "ExportReviewEntry",
+      "type": "object"
+    },
+    "PageText": {
+      "properties": {
+        "page": {
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "extraction_method": {
+          "title": "Extraction Method",
+          "type": "string"
+        }
+      },
+      "required": [
+        "page",
+        "text",
+        "extraction_method"
+      ],
+      "title": "PageText",
+      "type": "object"
+    },
+    "SummaryEvidence": {
+      "properties": {
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "source_page": {
+          "title": "Source Page",
+          "type": "integer"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_start": {
+          "title": "Span Start",
+          "type": "integer"
+        },
+        "span_end": {
+          "title": "Span End",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "statement",
+        "source_page",
+        "quote",
+        "span_start",
+        "span_end"
+      ],
+      "title": "SummaryEvidence",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document": {
+      "$ref": "#/$defs/ExportDocument"
+    },
+    "analysis": {
+      "$ref": "#/$defs/Analysis"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "review_history": {
+      "items": {
+        "$ref": "#/$defs/ExportReviewEntry"
+      },
+      "title": "Review History",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document",
+    "analysis",
+    "warnings"
+  ],
+  "title": "ExportPayload",
+  "type": "object"
+}

@@ -2,9 +2,10 @@ import json
 import pytest
 from pydantic import ValidationError
 from app.evaluation.annotations import AnnotatedDocument
-from app.evaluation.metrics import score_entities, summarize_review
+from app.evaluation.metrics import score_entities, score_relations, summarize_review
 from app.evaluation.model_adapter import BiomedicalNerAdapter, MODEL_LABEL_MAP
-from app.evaluation.run import load_records
+from app.evaluation.run import _evidence_span_correctness, load_records
+from app.evaluation.validate_summary_reviews import validate_record
 from app.nlp.extract import process_pages
 from app.schemas import PageText
 from app.services import answer_report_question
@@ -25,6 +26,15 @@ def test_split_checker_detects_patient_leak_and_near_duplicate():
     with pytest.raises(ValueError,match="near duplicate"): load_records_from_objects([a,b])
     b["pages"][0]["text"]="No finding identified."; b["annotations"][0].update(start_char=0,end_char=len("No finding identified."),original_text="No finding identified.")
     with pytest.raises(ValueError,match="patient group"): load_records_from_objects([a,b|{"patient_group":"p1"}])
+
+def test_production_split_loader_rejects_near_duplicates_within_same_split(tmp_path):
+    first=record("No finding present.",0,19,"No finding present.",patient="p1")
+    second=record("no   finding present.",0,21,"no   finding present.",patient="p2")
+    second["document_id"]="d-p2"
+    path=tmp_path/"duplicates.jsonl"
+    path.write_text("\n".join(json.dumps(x) for x in (first,second)),encoding="utf-8")
+    with pytest.raises(ValueError,match="duplicate within split"):
+        load_records(path)
 
 def load_records_from_objects(records):
     # Exercise same validation logic without writing test fixtures to the source tree.
@@ -47,6 +57,44 @@ def test_strict_span_metrics_require_identical_offsets_and_label():
     score=score_entities([g],[p])
     assert (score["true_positive"],score["false_positive"],score["false_negative"])==(0,1,1)
     assert score["strict_span_f1"]==0
+
+def test_same_offsets_in_different_documents_are_counted_independently():
+    a={"document_id":"doc-a","source_page":1,"start_char":0,"end_char":4,"entity_type":"lab"}
+    b={**a,"document_id":"doc-b"}
+    assert score_entities([a,b],[a,b])["true_positive"]==2
+
+def test_duplicate_predictions_are_false_positives_instead_of_collapsing():
+    gold={"document_id":"d1","source_page":1,"start_char":0,"end_char":4,"entity_type":"diagnosis_or_symptom"}
+    result=score_entities([gold],[gold,gold])
+    assert (result["true_positive"],result["false_positive"],result["false_negative"])==(1,1,0)
+
+def test_context_metrics_score_attributes_only_when_both_sides_provide_them():
+    gold={"document_id":"d1","source_page":1,"start_char":0,"end_char":14,"entity_type":"radiology_finding","negation":True,"uncertainty":False,"temporality":"historical"}
+    predicted={**gold,"negation":False,"temporality":"current"}
+    predicted.pop("uncertainty")
+    result=score_entities([gold],[predicted])
+    assert result["attribute_classification"]["negation"]["accuracy"]==0
+    assert result["attribute_classification"]["temporality"]["accuracy"]==0
+    assert result["attribute_classification"]["uncertainty"]["accuracy"] is None
+    missing={k:v for k,v in predicted.items() if k!="temporality"}
+    assert score_entities([gold],[missing])["attribute_classification"]["temporality"]["unavailable_on_matched_spans"]==1
+
+def test_invalid_or_missing_source_offsets_count_as_unresolved_evidence():
+    row=record("No finding present.",0,19,"No finding present.")
+    parsed=AnnotatedDocument.model_validate(row)
+    invalid={"document_id":parsed.document_id,"source_page":1,"start_char":0,"end_char":2,"original_text":"Wrong","entity_type":"radiology_finding"}
+    missing={"document_id":parsed.document_id,"source_page":1,"start_char":None,"end_char":None,"original_text":"No finding present.","entity_type":"radiology_finding"}
+    result=_evidence_span_correctness([parsed],[invalid,missing])
+    assert result=={"correct":0,"count":2,"resolved_span_count":1,"unresolved_span_count":1,"accuracy":0.0}
+
+def test_differential_evidence_link_metric_requires_exact_source_and_target_spans():
+    candidate={"document_id":"d1","entity_id":"candidate","source_page":1,"start_char":0,"end_char":7,"entity_type":"differential_possibility","relations":[]}
+    evidence={"document_id":"d1","entity_id":"support","source_page":1,"start_char":8,"end_char":15,"entity_type":"differential_evidence_for","relations":[{"relation_type":"supports","target_entity_id":"candidate"}]}
+    result=score_relations([candidate,evidence],[candidate,evidence])
+    assert result["true_positive"]==1 and result["f1"]==1.0
+    malformed={**evidence,"relations":[{"relation_type":"supports","target_entity_id":"missing"}]}
+    unresolved=score_relations([candidate,evidence],[candidate,malformed])
+    assert unresolved["true_positive"]==0 and unresolved["false_positive"]==1 and unresolved["false_negative"]==1
 
 def test_model_adapter_maps_supported_labels_preserves_exact_offsets_and_exposes_failure():
     adapter=BiomedicalNerAdapter("local-model",lambda model,revision:(lambda text:[{"entity_group":"Lab_value","start":0,"end":8}]))
@@ -84,3 +132,17 @@ def test_manual_summary_review_metrics_skip_unreviewed_records():
     assert result["reviewed_summary_count"]==1 and result["supported_claim_rate"]==.5
     assert result["unsupported_claim_rate"]==.5 and result["evidence_reference_correctness"]==.5
     assert summarize_review([])["supported_claim_rate"] is None
+
+def test_pending_summary_review_requires_sources_but_no_human_scores():
+    row={"schema_version":"2.0","document_id":"summary-1","source_report":{"pages":[{"page":1,"text":"No acute finding."}],"passages":[{"page":1,"start_char":0,"end_char":18,"quote":"No acute finding."}]},"generated_summary":"Evidence-linked statements were extracted.","review_status":"pending","reviewed":False,"claims":[{"claim":"No acute finding.","supported":None,"evidence_correct":None,"source_page":1,"start_char":0,"end_char":18}],"critical_omission":None,"contradiction":None,"reviewer_id":None}
+    validate_record(row)
+    row["claims"][0]["supported"]=True
+    with pytest.raises(ValueError,match="pending claims"):
+        validate_record(row)
+
+def test_completed_summary_review_requires_human_decisions():
+    row={"schema_version":"2.0","document_id":"summary-1","source_report":{"pages":[{"page":1,"text":"No acute finding."}],"passages":[]},"generated_summary":"Evidence-linked statements were extracted.","review_status":"completed","reviewed":True,"claims":[{"claim":"No acute finding.","supported":True,"evidence_correct":True,"source_page":1,"start_char":0,"end_char":18}],"critical_omission":False,"contradiction":False,"reviewer_id":"reviewer-1"}
+    validate_record(row)
+    row["claims"][0]["supported"]=None
+    with pytest.raises(ValueError,match="completed claims"):
+        validate_record(row)

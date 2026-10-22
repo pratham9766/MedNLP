@@ -1,0 +1,51 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+01 TYPE2 DIABETES METABOLIC FOLLOWUP
+LABORATORY RESULTS - COMPREHENSIVE METABOLIC PANEL
+Synthetic case: DEMO-DM-1042 | Collection: 2026-05-14 08:12 | Fasting: Yes
+Ordering service: Internal Medicine | Specimen: Serum unless otherwise noted
+Clinical history supplied with order: Type 2 diabetes mellitus; follow-up testing.
+The clinical history is supplied context. Results below are reported measurements.
+TEST / ANALYTE                         RESULT        UNIT          REFERENCE       FLAG
+Glucose, fasting 154 mg/dL H (70-99)
+Sodium 138 mmol/L (135-145)
+Potassium 4.6 mmol/L (3.5-5.1)
+Chloride 102 mmol/L (98-107)
+Carbon dioxide 24 mmol/L (22-29)
+Urea nitrogen (BUN) 19 mg/dL (7-20)
+Creatinine 0.92 mg/dL (0.60-1.10)
+Estimated GFR                        78            mL/min/1.73m2 >=60            -
+Calcium 9.3 mg/dL (8.6-10.2)
+Total protein 7.1 g/dL (6.0-8.3)
+Albumin 4.0 g/dL (3.5-5.0)
+Total bilirubin 0.6 mg/dL (0.2-1.2)
+AST 22 U/L (10-40)
+ALT 28 U/L (7-56)
+Alkaline phosphatase 88 U/L (40-129)
+Laboratory comment: eGFR is calculated using the laboratory's current equation.
+Values and intervals are reproduced as printed; interpretation remains with the treating team.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+01 TYPE2 DIABETES METABOLIC FOLLOWUP
+LABORATORY RESULTS - GLYCEMIC AND LIPID TESTING
+Synthetic case: DEMO-DM-1042 | Collection: 2026-05-14 | Page 2 of 2
+TEST / ANALYTE                         RESULT        UNIT          REFERENCE       FLAG
+Hemoglobin A1c 8.1 % H (4.0-5.6)
+Estimated average glucose             186           mg/dL         not established -
+Total cholesterol 212 mg/dL H (<200)
+HDL cholesterol 43 mg/dL (>=40)
+LDL cholesterol, calculated 136 mg/dL H (<100)
+Triglycerides 166 mg/dL H (<150)
+URINE ALBUMIN SCREEN
+Urine albumin                         24            mg/L          not established -
+Urine creatinine                      112           mg/dL         not established -
+Albumin/creatinine ratio 21 mg/g (<30)
+Method note: LDL is calculated. The laboratory did not provide a reference interval for
+estimated average glucose or the individual urine concentrations on this report.
+Specimen quality: Acceptable. No hemolysis or lipemia interference reported.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

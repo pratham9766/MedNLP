@@ -1,0 +1,49 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+04 CHEST CT INDETERMINATE OPACITY
+COMPUTED TOMOGRAPHY - CHEST WITHOUT IV CONTRAST
+Synthetic case: DEMO-RAD-4406 | Examination: 2026-07-08 | Comparison: CT 2025-11-19
+Clinical indication: persistent cough; prior small pulmonary opacity described in outside note.
+Dose information: omitted from this synthetic narrative fixture.
+TECHNIQUE
+Axial noncontrast images with coronal and sagittal reformats. Evaluation of pulmonary arteries
+is limited without intravenous contrast. This examination was not performed as a pulmonary
+angiogram.
+FINDINGS
+Lungs and airways: A 7 mm subpleural ground-glass opacity is present in the left upper lobe
+(series 4, image 82), not clearly changed from the outside study given differing technique.
+This may represent focal inflammation or an indolent process. No dense focal air-space
+consolidation is seen. Mild dependent linear atelectatic change is present at both bases.
+Central airways are patent. No pleural effusion or pneumothorax.
+Mediastinum: No enlarged mediastinal lymph node by size criteria. Cardiac size is within
+expected
+limits. No pericardial effusion. Mild coronary arterial calcification is noted.
+Upper abdomen: Limited images show no acute finding in the visualized portions.
+Bones: Mild multilevel degenerative change. No acute osseous abnormality identified.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+04 CHEST CT INDETERMINATE OPACITY
+COMPUTED TOMOGRAPHY - CHEST WITHOUT IV CONTRAST
+Synthetic case: DEMO-RAD-4406 | Page 2 of 2
+IMPRESSION
+1. 7 mm left upper-lobe subpleural ground-glass opacity. Stability is uncertain because the
+prior
+comparison used a different technique. It may be inflammatory; an indolent lesion cannot be
+excluded from this examination alone.
+2. No dense air-space consolidation, pleural effusion, or pneumothorax.
+3. Mild coronary arterial calcification.
+RECOMMENDATION
+Correlate with prior imaging if available. Follow-up interval imaging may be considered
+according
+to the treating clinician's assessment and applicable local protocol. This report does not state
+that a follow-up study has been scheduled.
+COMMUNICATION
+No urgent unexpected finding requiring direct communication is documented in this synthetic
+case.
+Interpreting service: Fictional Diagnostic Imaging Group.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

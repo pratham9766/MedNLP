@@ -26,7 +26,7 @@ The production extractor is deliberately rule-based. An opt-in pretrained token-
    .\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
    ```
 
-   Startup initializes the configured SQLite database. Health is at `/api/v1/health`; OpenAPI is at `/docs`.
+   Startup applies the Alembic schema and recovers locally queued/interrupted report jobs. Health is at `/api/v1/health`; OpenAPI is at `/docs`.
 5. In another terminal, install the exact frontend lockfile and start Vite:
 
    ```powershell
@@ -37,21 +37,27 @@ The production extractor is deliberately rule-based. An opt-in pretrained token-
 
    The Vite proxy forwards `/api` to `http://127.0.0.1:8000`.
 
-PyMuPDF is installed with the Python requirements. `pytesseract` is included, but scanned-page OCR also requires the native Tesseract executable installed separately and available on `PATH`; restart the backend and check `/api/v1/health` after installing it. Without it, OCR reports unavailable and the analysis includes an extraction warning. The backend accepts PDF, PNG, and JPEG up to 20 MB. Storage is outside the frontend public directory.
+PyMuPDF is installed with the Python requirements. `pytesseract` is included, but scanned-page OCR also requires the native Tesseract executable installed separately. Add `tesseract.exe` to `PATH` or set `MEDNLP_TESSERACT_CMD` to its full Windows path; restart the backend and check `/api/v1/health` for its availability/path. Without it, OCR is unavailable and extraction warnings are shown. The backend accepts PDF, PNG, and JPEG up to the configured 20 MB default (set `MEDNLP_MAX_UPLOAD_BYTES` to change it), up to the configured page limit. Storage is outside the frontend public directory.
 
 ## Verification
 
-Validate and regenerate the versioned synthetic evaluation outputs from `backend`:
+Validate the synthetic annotations and run the v3 frozen before/after comparison from `backend`:
 
 ```powershell
+cd backend
+.\.venv\Scripts\python.exe -m alembic upgrade head
 .\.venv\Scripts\python.exe -m app.evaluation.validate_annotations
-.\.venv\Scripts\python.exe -m app.evaluation.run
+.\.venv\Scripts\python.exe -m app.evaluation.run_quality_v3
 .\.venv\Scripts\python.exe -m pytest -q --basetemp=.pytest-tmp
 ```
 
-The evaluation runner writes `data/synthetic/evaluation.v1.{json,csv,md}`. Its synthetic evaluation partition has six documents and 12 manually labeled entities, with patient-separated development and evaluation groups plus cross-split near-duplicate checks. The rule baseline currently measures strict-span precision 0.750, recall 0.750, and F1 0.750 on this tiny authored synthetic set. These are descriptive regression measurements, not clinical evidence or real-world performance estimates. The former three-example smoke scores are a historical artifact only. See `docs/evaluation.md` for denominators and limitations.
+The v3 runner writes `data/synthetic/evaluation.v3.{json,csv,md}` and preserves the earlier v1/v2 files. On the same seven-document/24-annotation synthetic held-out set, strict-span F1 changed from 0.723 before parser changes to 0.936 after. This small project-authored synthetic result is not clinical evidence or a real-world performance estimate; the v3 pretrained baseline is `not_run`, with no score. See `docs/evaluation.md` for protocol, denominators, and limitations.
 
-The optional biomedical NER adapter uses `d4data/biomedical-ner-all` with an explicit subset label map. Core setup does not install Transformers, PyTorch, or model weights. To opt in, install `backend/requirements-model.txt`, set `MEDNLP_RUN_MODEL=1` and optionally `MEDNLP_NER_MODEL`/`MEDNLP_NER_REVISION`, then run the evaluation module. Use an immutable model revision for research runs. The optional load was attempted and returned `ModuleNotFoundError: No module named 'transformers'`; no model weights were downloaded. Tesseract is also unavailable on this machine.
+The optional biomedical NER adapter uses `d4data/biomedical-ner-all` at revision `e2272cd5d96cb445524015fc5d9c1e198224a3bc` with an explicit subset label map. Core setup does not install Transformers, PyTorch, or model weights. To opt in, install `backend/requirements-model.txt` (or the tested closure in `backend/requirements-model-lock.txt`), set `MEDNLP_RUN_MODEL=1` and optionally `MEDNLP_NER_MODEL`/`MEDNLP_NER_REVISION`, then run the evaluation module. It remains an evaluation-only adapter and is not enabled in normal processing. Historical v2 model results are documented separately; no pretrained model was run for v3. See `docs/evaluation.md` for prior model timing, labels, truncation behavior, license scope, and limitations. Tesseract is unavailable on this machine.
 
-The frontend production build is checked with `npm run build` from `frontend`. Historical Phase 2 validation covered 13 backend tests and a browser smoke workflow on the synthetic lab PDF. Phase 3 adds annotation schema/offset, metric, adapter mapping/failure, QA evidence, summary review metric, and correction/export assertions. Current outcomes are reported after the Phase 3 verification run.
+The frontend production build is checked with `npm run build` from `frontend`. Three source-linked summary-review examples are pending at `data/synthetic/summary_reviews.v2.jsonl`; they contain no human scores. Current results are documented in `docs/evaluation.md`, the product audit in `docs/implementation_audit.md`, and remaining risks in `docs/limitations.md`. Browser flows have not been verified; see `docs/manual_browser_verification.md` for repeatable local checks.
 See `docs/architecture.md`, `docs/privacy.md`, `docs/annotation_guidelines.md`, and `docs/limitations.md` before adapting this prototype.
+
+## Synthetic demonstration reports
+
+`data/synthetic/demo_reports/` contains eight fictional PDF fixtures across laboratory, discharge, and radiology report types. Six shorter reports cover diabetes, chronic kidney disease, pneumonia, an indeterminate lung opacity, iron studies, and heart-failure medication reconciliation. The other two are longer cases: a four-page admission-to-discharge patient record and a three-page multi-disease differential assessment. Their intended behavior coverage is indexed in `data/synthetic/demo_reports/README.md` and `manifest.json`. Every fixture is synthetic, visibly labeled, and intended for demonstrations and regression tests only; it is not clinical guidance. Regenerate them with `python -m app.evaluation.create_demo_reports` from `backend`.

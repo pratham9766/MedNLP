@@ -1,0 +1,51 @@
+--- PAGE 1 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+06 HEART FAILURE DISCHARGE MEDICATION RECONCILIATION
+HOSPITAL DISCHARGE SUMMARY
+Synthetic case: DEMO-CARD-6024 | Admission: 2026-05-02 | Discharge: 2026-05-07
+Facility: Fictional Lakeside General | Service: Cardiology
+PRESENTING CONCERN
+Progressive exertional breathlessness and ankle swelling over approximately 10 days.
+The synthetic history notes a 2.1 kg weight increase compared with a home log entry from two
+weeks earlier. No chest pain was documented at triage.
+DISCHARGE DIAGNOSES
+1. Acute decompensated heart failure with reduced ejection fraction, documented in the discharge
+diagnosis list; echocardiogram during admission reported LVEF 35%.
+2. Hypertension, history documented; inpatient readings improved before discharge.
+3. Chronic kidney disease, stage 3a per prior chart history; current creatinine is listed below.
+RELEVANT HISTORY AND ALLERGIES
+Prior myocardial infarction is listed in a 2022 outside note; no event during this admission.
+Allergy list: lisinopril - persistent dry cough (reaction recorded as intolerance in source).
+No contrast allergy is recorded in the provided record.
+HOSPITAL COURSE
+The team documented volume overload on presentation. Intravenous diuretic treatment was given.
+Breathing and peripheral edema improved. No mechanical ventilation was required. Telemetry
+showed no sustained ventricular arrhythmia in the documented period. Discharge weight: 74.8 kg.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+1/2
+
+--- PAGE 2 ---
+MEDNLP INSIGHT  /  SYNTHETIC DEMONSTRATION
+06 HEART FAILURE DISCHARGE MEDICATION RECONCILIATION
+HOSPITAL DISCHARGE SUMMARY - CONTINUED
+Synthetic case: DEMO-CARD-6024 | Page 2 of 2
+SELECTED DISCHARGE LABORATORY RESULTS
+Sodium 136 mmol/L (135-145); potassium 4.4 mmol/L (3.5-5.1); creatinine 1.42 mg/dL
+(0.60-1.10), reported high; estimated GFR 52 mL/min/1.73m2 (>=60), reported low.
+The summary reproduces the stated laboratory ranges and flags; it does not independently
+interpret renal function or medication suitability.
+MEDICATION RECONCILIATION - TAKE AT DISCHARGE
+Furosemide 40 mg by mouth each morning. The note says this replaces the prior 20 mg daily dose.
+Carvedilol 6.25 mg by mouth twice daily with food.
+Empagliflozin 10 mg by mouth once daily; newly listed at discharge.
+Aspirin 81 mg by mouth once daily; continued from home list.
+Potassium supplement: held at discharge; the record says to review at follow-up.
+Lisinopril: remains discontinued because the documented cough reaction; no restart instruction.
+FOLLOW-UP
+Cardiology appointment requested within 7 days; appointment date is not present in this
+document.
+Basic metabolic panel recommended in 3-5 days. Daily weights and written return precautions
+were discussed per note. These actions are documented instructions; completion is not confirmed.
+END OF REPORT - Synthetic educational test fixture; not a real patient record.
+FICTIONAL TRAINING CASE · NOT A REAL PATIENT RECORD OR MEDICAL ADVICE
+2/2

@@ -1,0 +1,4 @@
+baseline,status,documents,gold_entities,precision,recall,strict_span_f1,evidence_span_accuracy,processing_failures
+unchanged_rules_baseline,available,7,24,0.7391304347826086,0.7083333333333334,0.723404255319149,1.0,0
+rule_baseline,available,7,24,0.9565217391304348,0.9166666666666666,0.9361702127659574,1.0,0
+pretrained_baseline,not_run,,,,,,,

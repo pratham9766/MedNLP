@@ -31,7 +31,7 @@ class AnalysisResult(Base):
     __tablename__ = "analysis_results"
     id: Mapped[int] = mapped_column(primary_key=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id", ondelete="CASCADE"), unique=True)
-    schema_version: Mapped[str] = mapped_column(String(20), default="1.0")
+    schema_version: Mapped[str] = mapped_column(String(20), default="1.1")
     model_ids: Mapped[list] = mapped_column(JSON, default=list)
     structured_data: Mapped[dict] = mapped_column(JSON, default=dict)
     summary: Mapped[str] = mapped_column(Text, default="")
@@ -39,6 +39,7 @@ class AnalysisResult(Base):
     review_status: Mapped[str] = mapped_column(String(30), default="needs_review")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     document: Mapped[Document] = relationship(back_populates="analysis")
+    reviews: Mapped[list["ReviewAnnotation"]] = relationship(back_populates="analysis", cascade="all, delete-orphan", passive_deletes=True)
 
 class ReviewAnnotation(Base):
     __tablename__ = "review_annotations"
@@ -49,6 +50,7 @@ class ReviewAnnotation(Base):
     corrected_value: Mapped[str] = mapped_column(Text)
     reviewer_feedback: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    analysis: Mapped[AnalysisResult] = relationship(back_populates="reviews")
 
 class AuditEvent(Base):
     __tablename__ = "audit_events"
